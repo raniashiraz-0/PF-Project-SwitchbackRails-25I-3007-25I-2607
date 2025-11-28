@@ -10,7 +10,9 @@
 // ----------------------------------------------------------------------------
 // Returns true if x,y are within bounds.
 // ----------------------------------------------------------------------------
-bool isInBounds() {
+bool isInBounds(int x, int y, const SimulationState& state) 
+{
+	return x>=0 && x<g_col && y>=0 && y<g_row
 }
 
 // ----------------------------------------------------------------------------
@@ -18,7 +20,14 @@ bool isInBounds() {
 // ----------------------------------------------------------------------------
 // Returns true if the tile can be traversed by trains.
 // ----------------------------------------------------------------------------
-bool isTrackTile() {
+bool isTrackTile(char tile) {
+	if (tile =='+' || tile =='-' || tile =='/' || tile =='\\' || tile=='|'|| tile == '=')
+		return true;
+	if (tile >= '1' && tile <='9')
+		return true;
+	if (tile == 'G' || tile =='R' || tile =='Y' || tile =='D' || tile =='S')
+		return true;
+	return false;	
 }
 
 // ----------------------------------------------------------------------------
@@ -26,15 +35,20 @@ bool isTrackTile() {
 // ----------------------------------------------------------------------------
 // Returns true if the tile is 'A'..'Z'.
 // ----------------------------------------------------------------------------
-bool isSwitchTile() {
+bool isSwitchTile(char tile) {
+	if (tile >= 'A' && tile<= 'Z')
+		return true;
 }
-
+;
 // ----------------------------------------------------------------------------
 // Get switch index from character.
 // ----------------------------------------------------------------------------
 // Maps 'A'..'Z' to 0..25, else -1.
 // ----------------------------------------------------------------------------
-int getSwitchIndex() {
+int getSwitchIndex(char tile) {
+	if (tile >= 'A' && tile<= 'Z')
+		return tile -'A';
+	return -1;
 }
 
 // ----------------------------------------------------------------------------
@@ -42,7 +56,13 @@ int getSwitchIndex() {
 // ----------------------------------------------------------------------------
 // Returns true if x,y is a spawn.
 // ----------------------------------------------------------------------------
-bool isSpawnPoint() {
+bool isSpawnPoint(int x, int y, const SimulationState& state) {
+	if (isInBounds(int x, int y, const SimulationState& state) == true)
+		if (state.grid[x][y] =='S')
+			return true;
+		return false;	
+	return false;
+	 
 }
 
 // ----------------------------------------------------------------------------
@@ -50,7 +70,12 @@ bool isSpawnPoint() {
 // ----------------------------------------------------------------------------
 // Returns true if x,y is a destination.
 // ----------------------------------------------------------------------------
-bool isDestinationPoint() {
+bool isDestinationPoint(int x, int y, const SimulationState& state) {
+	if (isInBounds(int x, int y, const SimulationState& state) == true)
+		if (state.grid[x][y] =='D')
+			return true;
+		return false;	
+	return false;
 }
 
 // ----------------------------------------------------------------------------
@@ -59,4 +84,19 @@ bool isDestinationPoint() {
 // Returns true if toggled successfully.
 // ----------------------------------------------------------------------------
 bool toggleSafetyTile() {
+	if (isInBounds(int x, int y, const SimulationState& state) != true)
+	{		
+		&char CurrentTile = state.grid[x][y];
+		if (CurrentTile == '=')
+		{
+			CurrentTile = '-';
+			return true;
+		}
+		else if (CurrentTile != 'S' && CurrentTile != 'D' && isTrackTile(CurrentTile))
+		{
+			CurrentTile = '=';
+			return true;
+		}
+		return false;
+	}
 }
