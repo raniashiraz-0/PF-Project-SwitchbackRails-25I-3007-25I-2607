@@ -61,13 +61,13 @@ extern int GlobalSwitchCount;
 // GLOBAL STATE: SPAWN POINTS
 // ----------------------------------------------------------------------------
 extern SpawnPoint GlobalSpawnPoints[MaxTrains];
-extern int GloablSpawnCount;
+extern int GlobalSpawnCount;
 
 // ----------------------------------------------------------------------------
 // GLOBAL STATE: DESTINATION POINTS
 // ----------------------------------------------------------------------------
 extern DestinationPoint GlobalDestinationPoints[MaxTrains];
-extern int GloablDestinationCount;
+extern int GlobalDestinationCount;
 
 // ----------------------------------------------------------------------------
 // GLOBAL STATE: SIMULATION PARAMETERS
@@ -79,12 +79,12 @@ extern WeatherType GlobalWeather;
 // ----------------------------------------------------------------------------
 // GLOBAL STATE: METRICS
 // ----------------------------------------------------------------------------
-extern SimulationMetrics GloablMetrics;
+extern SimulationMetrics GlobalMetrics;
 
 // ----------------------------------------------------------------------------
 // GLOBAL STATE: EMERGENCY HALT
 // ----------------------------------------------------------------------------
-extern EmergencyHalt GloablEmergencyHalt;
+extern EmergencyHalt GlobalEmergencyHalt;
 
 // ----------------------------------------------------------------------------
 // INITIALIZATION FUNCTION
