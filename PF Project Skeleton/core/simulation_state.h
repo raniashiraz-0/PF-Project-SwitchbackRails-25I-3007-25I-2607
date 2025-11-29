@@ -93,7 +93,7 @@ extern int g_kcount[MaxSwitches][DirectionCount];
 extern bool g_switchtoflip[MaxSwitches];
 extern int g_switchflipcount[MaxSwitches];
 extern char g_switchstate0[MaxSwitches];
-extern char g_switchstate1[		
+extern char g_switchstate1[MaxSwitches];	
 // ----------------------------------------------------------------------------
 // GLOBAL STATE: SPAWN POINTS
 // ----------------------------------------------------------------------------
