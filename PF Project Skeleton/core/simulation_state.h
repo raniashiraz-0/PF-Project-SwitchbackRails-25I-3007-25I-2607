@@ -85,7 +85,7 @@ extern bool g_trainhalt[Max_Trains];
 // ----------------------------------------------------------------------------
 // GLOBAL STATE: SWITCHES (A-Z mapped to 0-25)
 // ----------------------------------------------------------------------------
-int g_switchcount = 0;
+
 extern char g_switchletter[MaxSwitches];
 extern SwitchMode g_switchmodes[MaxSwitches];
 extern int g_switchinit[MaxSwitches];
