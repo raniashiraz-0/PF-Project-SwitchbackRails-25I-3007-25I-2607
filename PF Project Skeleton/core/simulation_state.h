@@ -75,7 +75,9 @@ extern int GlobalDestinationCount;
 extern int GlobalCurrentTick;
 extern int GlobalSeed;
 extern WeatherType GlobalWeather;
-
+extern GlobalDelievered;
+extern GlobalActiveTrains;
+extern GlobalCrashed;
 // ----------------------------------------------------------------------------
 // GLOBAL STATE: METRICS
 // ----------------------------------------------------------------------------
