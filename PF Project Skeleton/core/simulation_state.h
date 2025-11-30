@@ -72,6 +72,7 @@ extern char g_gridtiles[MaxRows][MaxCols];
 // GLOBAL STATE: TRAINS
 // ----------------------------------------------------------------------------
 extern int g_traincount;
+extern int g_trainid[Max_Trains];
 extern int g_trainX[Max_Trains];
 extern int g_trainY[Max_Trains];
 extern int g_trainspawntick[Max_Trains];
