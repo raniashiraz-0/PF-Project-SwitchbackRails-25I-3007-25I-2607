@@ -89,10 +89,11 @@ for (int i=0;i<MaxRows;i++)
 int g_traincount =0;
 int g_spawncount =0 ;
 int g_destinationcount = 0;
-for (int i =0;i<MaxTrains;i++)
+for (int i =0;i<Max_Trains;i++)
 {
 	g_trainX[i]=-1;
 	g_trainY[i] =-1;
+	g_trainid[i] = i;
 	g_trainspawntick[i]=0;
 	g_traindestinationx[i] = 0;
 	g_traindestinationy[i] =0;
