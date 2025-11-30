@@ -9,7 +9,7 @@
 // SWITCH COUNTER UPDATE
 // ----------------------------------------------------------------------------
 // Increment counters when trains enter switches.
-void updateSwitchCounters();
+void updateSwitchCounters(int trainID, int entryX, int entryY);
 
 // ----------------------------------------------------------------------------
 // FLIP QUEUE
@@ -33,12 +33,12 @@ void updateSignalLights();
 // SWITCH TOGGLE (for manual control / editing)
 // ----------------------------------------------------------------------------
 // Manually toggle a switch state.
-void toggleSwitchState();
+void toggleSwitchState(char switchLetter);
 
 // ----------------------------------------------------------------------------
 // HELPER FUNCTIONS
 // ----------------------------------------------------------------------------
 // Get state for a given direction.
-int getSwitchStateForDirection();
+int getSwitchStateForDirection(char switchLetter, Direction entryDir);
 
 #endif
