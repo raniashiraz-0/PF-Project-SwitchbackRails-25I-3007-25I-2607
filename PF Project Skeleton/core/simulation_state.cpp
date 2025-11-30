@@ -77,4 +77,60 @@ bool g_simulationrunning=false;
 // Called before loading a new level.
 // ----------------------------------------------------------------------------
 void initializeSimulationState() {
+g_gridrows=0;
+g_gridcols=0;
+for (int i=0;i<MaxRows;i++)
+{
+	for (int j=0;j<MaxCols;j++)
+	{
+		g_gridtiles[i][j] =" ";
+	}
+} 
+int g_traincount =0;
+int g_spawncount =0 ;
+int g_destinationcount = 0;
+for (int i =0;i<MaxTrains;i++)
+{
+	g_trainX[i]=-1;
+	g_trainY[i] =-1;
+	g_trainspawntick[i]=0;
+	g_traindestinationx[i] = 0;
+	g_traindestinationy[i] =0;
+	g_traincolor[i]=0;
+	g_trainmovementinrain[i]= 0;
+	g_trainhalt[i] =false;
+	g_spawncountx[i]=-1;
+	g_spawncounty[i]=-1;
+	g_destinationx[i] = -1;
+	g_destinationyy[i] = -1;
+	
+}
+int g_switchcount =0;
+for (int i=0;i<MaxSwitches;i++)
+{
+	g_switchletter[i] = 'A'+i;
+	g_switchmode[i]=ModePerDirection;
+	g_switchinit[i]=0;
+	for (int j=0;j<DirectionCount; j++)
+	{	
+		g_switchtrainentercount[i][j]=0;
+		g_kcount[i][j] =0;
+	}
+	g_switchtoflip[i]=false;
+	g_switchfipcount[i]=0;
+	g_switchstate0[i]=" ";
+	g_switchstate1[i] = " ";
+}
+int g_currenttick=0;
+int g_seed=0;
+WeatherType g_weather = WeatherNormal;
+bool g_simulationrunning = false;
+bool g_simulationpaused=false;
+int g_metricsTotalTicks =0;
+int g_metricsTrainsDelivered =0 ;
+int g_metricsTrainsCrashed= 0;
+bool g_emergencyhaltactive =false ;
+int g_emergencyhalt_remainingticks = 0;
+int g_metricsttlswitchflips= 0 ;
+int g_metricstotalsafetybuffersused = 0;
 }
