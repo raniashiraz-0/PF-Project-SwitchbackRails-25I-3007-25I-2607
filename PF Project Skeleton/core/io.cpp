@@ -256,8 +256,7 @@ for (int i = 0; i < switchCount; i++) {
 // ----------------------------------------------------------------------------
 void writeMetrics() {
  metricsFile.open("out/metrics.txt");
-    
-    metricsFile << "=== SWITCHBACK RAILS METRICS ===\n\n";
+
     metricsFile << "Level: " << levelName << "\n";
     metricsFile << "Grid Size: " << levelRows << " x " << levelCols << "\n";
     metricsFile << "Weather: " << weatherType << "\n";
