@@ -89,7 +89,7 @@ extern int g_switchcount;
 extern char g_switchletter[MaxSwitches];
 extern SwitchMode g_switchmodes[MaxSwitches];
 extern int g_switchinit[MaxSwitches];
-extern int g_switchcount[MaxSwitches][DirectionCount];
+extern int g_switchtrainentercount[MaxSwitches][DirectionCount];
 extern int g_kcount[MaxSwitches][DirectionCount];
 extern bool g_switchtoflip[MaxSwitches];
 extern int g_switchflipcount[MaxSwitches];
